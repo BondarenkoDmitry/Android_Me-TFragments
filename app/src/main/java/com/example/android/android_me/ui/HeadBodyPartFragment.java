@@ -14,22 +14,20 @@ import com.example.android.android_me.data.AndroidImageAssets;
  * Created by dmitrybondarenko on 31.01.18.
  */
 
-public class BodyPartFragment extends Fragment {
+public class HeadBodyPartFragment extends Fragment {
 
-    public BodyPartFragment(){
+    public HeadBodyPartFragment(){
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        View rootView = inflater.inflate(R.layout.fragment_body_part, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_head_body_part, container, false);
 
-        ImageView imageView = (ImageView) rootView.findViewById(R.id.body_part_image_view);
+        ImageView imageView = (ImageView) rootView.findViewById(R.id.head_part_image_view);
 
         imageView.setImageResource(AndroidImageAssets.getHeads().get(0));
 
         return rootView;
     }
-
-
 }
