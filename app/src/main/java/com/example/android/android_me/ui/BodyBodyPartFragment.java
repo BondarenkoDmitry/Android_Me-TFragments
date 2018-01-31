@@ -2,6 +2,7 @@ package com.example.android.android_me.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +11,18 @@ import android.widget.ImageView;
 import com.example.android.android_me.R;
 import com.example.android.android_me.data.AndroidImageAssets;
 
+import java.util.List;
+
 /**
  * Created by dmitrybondarenko on 31.01.18.
  */
 
 public class BodyBodyPartFragment extends Fragment {
+
+    private static final String TAG = "BodyPartFragment";
+
+    private List <Integer> mImageIds;
+    private int mListIndex;
 
     public BodyBodyPartFragment() {
 
@@ -26,8 +34,51 @@ public class BodyBodyPartFragment extends Fragment {
 
         ImageView imageView = (ImageView) rootView.findViewById(R.id.body_part_image_view);
 
-        imageView.setImageResource(AndroidImageAssets.getBodies().get(0));
+        if (mImageIds != null){
+            imageView.setImageResource(mImageIds.get(mListIndex));
+        } else {
+            Log.v(TAG, "This fragment has a null list of images");
+        }
 
         return rootView;
     }
+
+    public void setImageIds(List<Integer> imageIds){
+        mImageIds = imageIds;
+    }
+
+    public void setListIndex(int index){
+        mListIndex = index;
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
