@@ -31,12 +31,12 @@ public class AndroidMeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_me);
 
-
+        if (savedInstanceState == null){
 
         BodyPartFragment headFragment = new BodyPartFragment();
 
         headFragment.setImageIds(AndroidImageAssets.getHeads());
-        headFragment.setListIndex(2);
+        headFragment.setListIndex(1);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
@@ -66,6 +66,7 @@ public class AndroidMeActivity extends AppCompatActivity {
         fragmentManager2.beginTransaction()
                 .add(R.id.legs_container, legsFragment)
                 .commit();
+        }
 
     }
 }
