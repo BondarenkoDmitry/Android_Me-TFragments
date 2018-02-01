@@ -16,7 +16,6 @@
 
 package com.example.android.android_me.ui;
 
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,7 +33,7 @@ public class AndroidMeActivity extends AppCompatActivity {
 
 
 
-        HeadBodyPartFragment headFragment = new HeadBodyPartFragment();
+        BodyPartFragment headFragment = new BodyPartFragment();
 
         headFragment.setImageIds(AndroidImageAssets.getHeads());
         headFragment.setListIndex(2);
@@ -46,7 +45,7 @@ public class AndroidMeActivity extends AppCompatActivity {
 
 
 
-        BodyBodyPartFragment bodyFragment = new BodyBodyPartFragment();
+        BodyPartFragment bodyFragment = new BodyPartFragment();
 
         bodyFragment.setImageIds(AndroidImageAssets.getBodies());
         bodyFragment.setListIndex(1);
@@ -58,7 +57,7 @@ public class AndroidMeActivity extends AppCompatActivity {
 
 
 
-        LegsBodyPartFragment legsFragment = new LegsBodyPartFragment();
+        BodyPartFragment legsFragment = new BodyPartFragment();
 
         legsFragment.setImageIds(AndroidImageAssets.getLegs());
         legsFragment.setListIndex(1);
