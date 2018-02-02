@@ -54,11 +54,12 @@ public class BodyPartFragment extends Fragment {
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
 
-//                The image shuffling I don't fully understand so far.
                 public void onClick(View view) {
+
                     if(mListIndex < mImageIds.size()-1){
                         mListIndex++;
                     } else {
+//                        The first item in the list is 0.
                         mListIndex = 0;
                     }
                     imageView.setImageResource(mImageIds.get(mListIndex));
@@ -82,7 +83,13 @@ public class BodyPartFragment extends Fragment {
 
 
 
-// Saving images from updating when rotating.
+    // Saving images from updating when rotating.
+// 3 Steps:
+//      - Final strings
+//      - Override onSavedInstanceState
+//      - In host activity create new fragments where there's no previously saved state.
+//
+
     @Override
     public void onSaveInstanceState(Bundle currentState){
         currentState.putIntegerArrayList(IMAGE_ID_LIST, (ArrayList<Integer>) mImageIds);
