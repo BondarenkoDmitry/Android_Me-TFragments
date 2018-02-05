@@ -20,6 +20,7 @@ import com.example.android.android_me.data.AndroidImageAssets;
 
 public class MasterListFragment extends Fragment {
 
+//    Define a new interface that triggers a call in MainActivity
     OnImageClickListener mCallback;
 
 // OnImageClickListener interface, calls a method in the host activity - onImageSelected
@@ -31,6 +32,7 @@ public class MasterListFragment extends Fragment {
     @Override
     public void onAttach(Context context){
         super.onAttach(context);
+//        The fragment attaches itself to the host activity
 
         try {
             mCallback = (OnImageClickListener) context;

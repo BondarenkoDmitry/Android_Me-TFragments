@@ -31,12 +31,16 @@ public class AndroidMeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_me);
 
+
         if (savedInstanceState == null){
 
         BodyPartFragment headFragment = new BodyPartFragment();
 
         headFragment.setImageIds(AndroidImageAssets.getHeads());
-        headFragment.setListIndex(1);
+
+//       Getting index from the intent. Default value = 0;
+        int headIndex = getIntent().getIntExtra("headIndex", 0);
+        headFragment.setListIndex(headIndex);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
@@ -48,7 +52,8 @@ public class AndroidMeActivity extends AppCompatActivity {
         BodyPartFragment bodyFragment = new BodyPartFragment();
 
         bodyFragment.setImageIds(AndroidImageAssets.getBodies());
-        bodyFragment.setListIndex(1);
+        int bodyIndex = getIntent().getIntExtra("bodyIndex", 0);
+        bodyFragment.setListIndex(bodyIndex);
 
         FragmentManager fragmentManager1 = getSupportFragmentManager();
         fragmentManager1.beginTransaction()
@@ -60,7 +65,8 @@ public class AndroidMeActivity extends AppCompatActivity {
         BodyPartFragment legsFragment = new BodyPartFragment();
 
         legsFragment.setImageIds(AndroidImageAssets.getLegs());
-        legsFragment.setListIndex(1);
+        int legIndex = getIntent().getIntExtra("legIndex", 0);
+        legsFragment.setListIndex(legIndex);
 
         FragmentManager fragmentManager2 = getSupportFragmentManager();
         fragmentManager2.beginTransaction()
