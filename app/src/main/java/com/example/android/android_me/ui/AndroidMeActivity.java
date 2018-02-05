@@ -55,8 +55,7 @@ public class AndroidMeActivity extends AppCompatActivity {
         int bodyIndex = getIntent().getIntExtra("bodyIndex", 0);
         bodyFragment.setListIndex(bodyIndex);
 
-        FragmentManager fragmentManager1 = getSupportFragmentManager();
-        fragmentManager1.beginTransaction()
+        fragmentManager.beginTransaction()
                 .add(R.id.body_container,bodyFragment)
                 .commit();
 
@@ -68,8 +67,7 @@ public class AndroidMeActivity extends AppCompatActivity {
         int legIndex = getIntent().getIntExtra("legIndex", 0);
         legsFragment.setListIndex(legIndex);
 
-        FragmentManager fragmentManager2 = getSupportFragmentManager();
-        fragmentManager2.beginTransaction()
+        fragmentManager.beginTransaction()
                 .add(R.id.legs_container, legsFragment)
                 .commit();
         }
